@@ -946,16 +946,16 @@ const contractABI = [
     "type": "receive"
   }
 ]
-const owner = '0x88a54dD1DCb8FC9Eab0426856A9088988c0172Ce'     // 总地址
-const A = '0xfb5B32aD0f1c6e8AE04D2C261dCD22eFEa54A7d0'         // 预售地址
-const D = '0x7142E053198f8Aa6Fc70481d921c8EC7fb2fE95e'         // 空投地址
-const B = "0x992F3b67d61a5DdA19A82932fDbb1535fFEd76D0"         // 技术地址
-const C = "0xED8629b430c84251D8b3db0Ebc534Dc2fC98b5fe"         // 风投地址
-const E = "0x472755134C04A8828EeF5fdbbcbd3BeD0e2226f0"         // 社区地址
-const F = "0x84E1741f08bF34054b4E5a857D86052fD0A595Ec"         // D池地址
-const I = "0x3256170667b9c5D3960ae6f9b68e4D84Bc9B1600"         // 竞赛地址
-const J = "0x8D909BdFb9f4BC5De8AE9316BE916fF48E054791"         // 持币分红地址
-const K = "0x6330001b89469b27662d346b5383D5008AfA49e4"         // lp分红地址
+const owner = ''     // 总地址
+const A = ''         // 预售地址
+const D = ''         // 空投地址
+const B = ""         // 技术地址
+const C = ""         // 风投地址
+const E = ""         // 社区地址
+const F = ""         // D池地址
+const I = ""         // 竞赛地址
+const J = ""         // 持币分红地址
+const K = ""         // lp分红地址
 const web3 = new Web3(rpc)
 const privateKeyOwner = Buffer.from(pkOwner, 'hex')
 const privateKeyPreSale = Buffer.from(pkPreSale, 'hex')
@@ -1424,47 +1424,47 @@ async function includeBackList(from, to, privateKey, contractAddress) {
 
 async function call(bep20ContractAddress, exchangeContractAddress, lockContractAddress, batchTransferAddress) {
     console.log('-----------------------设置白名单  开始------------------------')
-    // await includeWhiteList(owner, owner, privateKeyOwner, bep20ContractAddress)        // 总地址
-    // await includeWhiteList(owner, A, privateKeyOwner, bep20ContractAddress)            // 预售地址
-    // await includeWhiteList(owner, B, privateKeyOwner, bep20ContractAddress)            // 技术地址
-    // await includeWhiteList(owner, C, privateKeyOwner, bep20ContractAddress)            // 风投地址
-    // await includeWhiteList(owner, D, privateKeyOwner, bep20ContractAddress)            // 空投地址
-    // await includeWhiteList(owner, E, privateKeyOwner, bep20ContractAddress)            // 社区地址
-    // await includeWhiteList(owner, F, privateKeyOwner, bep20ContractAddress)            // D池地址
-    // await includeWhiteList(owner, lockContractAddress, privateKeyOwner, bep20ContractAddress)      // 锁仓地址
-    // await includeWhiteList(owner, exchangeContractAddress, privateKeyOwner, bep20ContractAddress)  // 置换地址
-    // await includeWhiteList(owner, bep20ContractAddress, privateKeyOwner, bep20ContractAddress)     // BYDK地址
-    // await includeWhiteList(owner, batchTransferAddress, privateKeyOwner, bep20ContractAddress)     // 批量转账合约地址
+    // await includeWhiteList(owner, owner, privateKeyOwner, bep20ContractAddress)       
+    // await includeWhiteList(owner, A, privateKeyOwner, bep20ContractAddress)          
+    // await includeWhiteList(owner, B, privateKeyOwner, bep20ContractAddress)          
+    // await includeWhiteList(owner, C, privateKeyOwner, bep20ContractAddress)        
+    // await includeWhiteList(owner, D, privateKeyOwner, bep20ContractAddress)         
+    // await includeWhiteList(owner, E, privateKeyOwner, bep20ContractAddress)           
+    // await includeWhiteList(owner, F, privateKeyOwner, bep20ContractAddress)         
+    // await includeWhiteList(owner, lockContractAddress, privateKeyOwner, bep20ContractAddress)     
+    // await includeWhiteList(owner, exchangeContractAddress, privateKeyOwner, bep20ContractAddress)  
+    // await includeWhiteList(owner, bep20ContractAddress, privateKeyOwner, bep20ContractAddress)     
+    // await includeWhiteList(owner, batchTransferAddress, privateKeyOwner, bep20ContractAddress)    
     console.log('-----------------------设置白名单  结束-------------------------')
 
     console.log('-----------------------设置黑名单  开始------------------------')
-    const back1 = "0x4aeD67E8149F3B240fd9CDd6F3213755BB5C2fB4"
-    const back2 = "0xb9478e5aac52433665b47ce827a470aa040f48f9"
+    const back1 = ""
+    const back2 = ""
     // await includeBackListERC20(owner, back1, privateKeyOwner, bep20ContractAddress)
     // await includeBackListERC20(owner, back2, privateKeyOwner, bep20ContractAddress)
     console.log('-----------------------设置黑名单  结束------------------------')
 
     console.log('-----------------------转账  开始-------------------------------')
-    // await transfer(owner, A, '1200000000000000000000000', privateKeyOwner, bep20ContractAddress)                       // 预售地址
-    // await transfer(owner, lockContractAddress, '100000000000000000000000', privateKeyOwner, bep20ContractAddress)      // 锁仓
-    // await transfer(owner, D, '60000000000000000000000', privateKeyOwner, bep20ContractAddress)                         // 空投地址
-    // await transfer(owner, E, '40000000000000000000000', privateKeyOwner, bep20ContractAddress)                         // 社区地址
-    // await transfer(owner, F, '20000000000000000000000', privateKeyOwner, bep20ContractAddress)                         // 排除D池地址
+    // await transfer(owner, A, '1200000000000000000000000', privateKeyOwner, bep20ContractAddress)                     
+    // await transfer(owner, lockContractAddress, '100000000000000000000000', privateKeyOwner, bep20ContractAddress)   
+    // await transfer(owner, D, '60000000000000000000000', privateKeyOwner, bep20ContractAddress)                   
+    // await transfer(owner, E, '40000000000000000000000', privateKeyOwner, bep20ContractAddress)                      
+    // await transfer(owner, F, '20000000000000000000000', privateKeyOwner, bep20ContractAddress)                 
     console.log('-----------------------转账  结束-------------------------------')
 
     console.log('-----------------------授权  开始-------------------------------')
-    // await approve(A, exchangeContractAddress, '1200000000000000000000000', privateKeyPreSale, bep20ContractAddress) // 预售地址授权置换合约
-    // await approve(J, batchTransferAddress, '1200000000000000000000000', privateKeyShare, bep20ContractAddress)      // 持币分红地址授权批量转账合约
-    // await approve(K, batchTransferAddress, '1200000000000000000000000', privateKeyLP, bep20ContractAddress)         // LP分红地址授权批量转账合约
+    // await approve(A, exchangeContractAddress, '1200000000000000000000000', privateKeyPreSale, bep20ContractAddress) 
+    // await approve(J, batchTransferAddress, '1200000000000000000000000', privateKeyShare, bep20ContractAddress)   
+    // await approve(K, batchTransferAddress, '1200000000000000000000000', privateKeyLP, bep20ContractAddress) 
     console.log('-----------------------授权  结束-------------------------------')
 
     console.log('-----------------------销毁  开始-------------------------------')
-    // await burn(owner, "580000000000000000000000", privateKeyOwner, bep20ContractAddress)                 // 游戏地址持币销毁
+    // await burn(owner, "580000000000000000000000", privateKeyOwner, bep20ContractAddress)               
     console.log('-----------------------销毁  结束-------------------------------')
 
     // owner向合约地址授权USDT  执行完成后检查（浏览器查询）
     console.log('-----------------------USDT授权  开始---------------------------')
-    // await approveUSDT(owner, bep20ContractAddress, "10000000000000000000000000000", privateKeyOwner)      // 主网usdt授权
+    // await approveUSDT(owner, bep20ContractAddress, "10000000000000000000000000000", privateKeyOwner)     
     console.log('-----------------------USDT授权  结束---------------------------')
 
     // 置换合约加入黑名单
@@ -1474,8 +1474,8 @@ async function call(bep20ContractAddress, exchangeContractAddress, lockContractA
     console.log('-----------------------Exchange加入黑名单  结束---------------------------')
 }
 
-const BYDKAddress = '0xFEefF156d1F2C3cD4dB2d4343F741F6971235E4b'     // BYDK合约地址
-const ExchangeAddress = '0x04EDDd3b335794754296e2FDC207789f1ae718e0' // 置换合约地址
-const LockAddress = '0xd26Eb5a82A5Ef5391b76FBf08A2651165A0Eab8e'     // 锁仓合约地址
-const BatchTransferAddress = '0xb72f838FBb569Ae7B9cfB66dd05143527585d1C0'     // 批量转账合约地址
+const BYDKAddress = ''     
+const ExchangeAddress = '' 
+const LockAddress = ''     
+const BatchTransferAddress = ''     
 call(BYDKAddress, ExchangeAddress, LockAddress, BatchTransferAddress)
