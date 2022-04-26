@@ -378,9 +378,9 @@ contract BYDK is Context, Ownable, IERC20 {
 
     address public usdt;
 
-    address public biddingAddress = 0x3256170667b9c5D3960ae6f9b68e4D84Bc9B1600;
-    address public shareAddress = 0x8D909BdFb9f4BC5De8AE9316BE916fF48E054791;
-    address public lpShareAddress = 0x6330001b89469b27662d346b5383D5008AfA49e4;
+    address public biddingAddress = ;
+    address public shareAddress = ;
+    address public lpShareAddress = ;
 
     IUniswapV2Router02 public immutable uniswapV2Router;
     IUniswapV2Pair public immutable uniswapV2Pair;
