@@ -3,9 +3,10 @@ require("@nomiclabs/hardhat-etherscan"); // 合约验证
 require('dotenv').config() // 解析.env
 
  module.exports = {
-  defaultNetwork: "rinkeby",
+  defaultNetwork: "hardhat",
   networks: {
-    hardhat: {
+   hardhat: {// local test
+      allowUnlimitedContractSize: false,
     },
     rinkeby: {
       url: "https://rinkeby.infura.io/v3/457c1ac43c544b05abfef0163084a7a6",
