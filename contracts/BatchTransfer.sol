@@ -5,45 +5,17 @@ interface IERC20 {
     function transferFrom(address sender,address recipient,uint256 amount) external returns (bool);
 }
 
-contract Ownable {
-    address public _owner;
-
-    modifier onlyOwner() {
-        require(_owner == msg.sender, "Ownable: caller is not the owner");
-        _;
-    }
-   
-    function renounceOwnership() public  onlyOwner {
-        _owner = address(0);
-    }
-
-    function transferOwnership(address newOwner) public  onlyOwner {
-        require(
-            newOwner != address(0),
-            "Ownable: new owner is the zero address"
-        );
-        _owner = newOwner;
-    }
-}
-
-contract BatchTransfer is Ownable{
-
-    IERC20 public token;
-
-    constructor(IERC20 token_) {
-        _owner = msg.sender;
-        token = token_;
-    }
-
-    function setToken(IERC20 token_) external onlyOwner{
-        token = token_;
-    }
-    
-    function batchTransfer(address from, address[] memory toList, uint256[] memory valueList) public returns (bool){
+contract BatchTransfer {
+    // 使用calldata会减少gas
+    function batchTransfer(IERC20 token, address from, address[] calldata toList, uint256[] calldata valueList) public returns (bool){
+        require(from == msg.sender, "No permission");
         require(toList.length > 0);
         require(toList.length == valueList.length);
-        for(uint i=0; i < toList.length; i++){
-            token.transferFrom(from, toList[i], valueList[i]);
+        uint256 len = toList.length; // 减少gas
+        for(uint i=0; i < len; i++){
+            address to = toList[i]; // 减少gas
+            uint256 amount = valueList[i]; // 减少gas
+            token.transferFrom(from, to, amount);
         }
         return true;
     }
