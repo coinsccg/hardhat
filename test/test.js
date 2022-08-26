@@ -1,3 +1,4 @@
+const { ethers } = require('hardhat')
 const { expect } = require("chai");
 
 describe("ERC721A合约和交易平台合约测试用例：\n", () => {
